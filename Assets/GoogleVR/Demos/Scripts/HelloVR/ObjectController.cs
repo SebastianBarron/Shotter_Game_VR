@@ -46,6 +46,14 @@ namespace GoogleVR.HelloVR {
       }
     }
 
+    /*Bala COLISION*/
+    public void OnCollisionEnter(Collision col) {
+      if(col.gameObject.tag == "bullet"){
+        TeleportRandomly();
+        GameObject.Destroy (col.gameObject);
+      }
+    }
+
     public void Recenter() {
 #if !UNITY_EDITOR
       GvrCardboardHelpers.Recenter();

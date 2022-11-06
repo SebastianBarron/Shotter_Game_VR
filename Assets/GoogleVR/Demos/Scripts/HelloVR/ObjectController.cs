@@ -23,6 +23,8 @@ namespace GoogleVR.HelloVR {
     public Material inactiveMaterial;
     public Material gazedAtMaterial;
 
+    public Score scoreScript;
+
     void Start() {
       startingPosition = transform.localPosition;
       myRenderer = GetComponent<Renderer>();
@@ -51,6 +53,7 @@ namespace GoogleVR.HelloVR {
       if(col.gameObject.tag == "bullet"){
         TeleportRandomly();
         GameObject.Destroy (col.gameObject);
+        scoreScript.updateScore (10);
       }
     }
 

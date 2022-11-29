@@ -17,7 +17,7 @@ public class BulletMovement : MonoBehaviour {
 		elapsed += Time.fixedDeltaTime;
 		transform.position += transform.forward*speed*Time.fixedDeltaTime;
 
-		if(elapsed > 10) {
+		if(elapsed > 1.25) {
 			GameObject.Destroy (gameObject);
 		}
 	}
